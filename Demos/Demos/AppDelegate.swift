@@ -1,14 +1,13 @@
 //
 //  AppDelegate.swift
-//  MTips
+//  Demos
 //
-//  Created by zhrmghgfff on 2020/7/1.
-//  Copyright © 2020 zhrmghgfff. All rights reserved.
+//  Created by Ma,Limin on 2020/11/30.
 //
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
