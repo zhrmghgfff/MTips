@@ -58,46 +58,31 @@ extension AsyncTask {
 }
 
 //MARK: - 任务协议
-extension AsyncTask {
-    
-    public protocol OneTask {
-        /// 任务状态
-        var state: State {get set}
-        /// 完成
-        var complete: ResultAction? { get set }
-        /// 错误
-        var error: ResultAction? { get set }
-        /// 结束回调
-        var endAction: EndAction? { get set }
-        /// 锁
-        var taskLock: pthread_mutex_t { get set }
+public protocol OneTask {
+    /// 任务状态
+    var state: AsyncTask.State {get set}
+    /// 完成
+    var complete: AsyncTask.ResultAction? { get set }
+    /// 错误
+    var error: AsyncTask.ResultAction? { get set }
+    /// 结束回调
+    var endAction: AsyncTask.EndAction? { get set }
+    /// 锁
+    var taskLock: pthread_mutex_t { get set }
 
-        /// 开始
-        func start()
+    /// 开始
+    func start()
 
-        /// 结束
-        /// - Parameter state: 结束的状态
-        func end(_ state:State)
+    /// 结束
+    /// - Parameter state: 结束的状态
+    func end(_ state:AsyncTask.State)
 
-        /// 取消
-        func cancel()
+    /// 取消
+    func cancel()
 
-        /// 加锁
-        func lock()
+    /// 加锁
+    func lock()
 
-        /// 解锁
-        func unlock()
-    }
-}
-
-extension AsyncTask.OneTask {
-    // MARK: 锁
-    func lock() {
-        var `self` = self
-        pthread_mutex_lock(&self.taskLock);
-    }
-    func unlock() {
-        var `self` = self
-        pthread_mutex_unlock(&self.taskLock);
-    }
+    /// 解锁
+    func unlock()
 }

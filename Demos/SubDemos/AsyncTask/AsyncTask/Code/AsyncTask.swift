@@ -14,9 +14,9 @@ public class AsyncTask {
     fileprivate var tag: Int
 
     /// 下一个 Task
-    fileprivate var nextTask: AsyncTask?
+    var nextTask: AsyncTask?
     /// 任务
-    fileprivate var task: OneTask?
+    var task: OneTask?
 
     /// 错误处理已经添加的回调
     fileprivate var errorDidAdded: ErrorCallback?
@@ -91,7 +91,7 @@ public class AsyncTask {
     }
 
     /// 任务结束
-    fileprivate func end(_ state: State) {
+    func end(_ state: State) {
         switch state {
             case .complete(_):
                 fallthrough
@@ -111,7 +111,7 @@ public class AsyncTask {
     }
 
     // MARK: 私有函数
-    fileprivate func addTask(_ task:@escaping TaskAction) {
+    func addTask(_ task:@escaping TaskAction) {
         self.task = Task(task)
 
         var gcd:AsyncTask? = self
@@ -217,7 +217,7 @@ extension AsyncTask {
 extension AsyncTask {
 
     /// 创建Task
-    fileprivate func createTask(_ task: @escaping TaskAction) -> AsyncTask {
+    func createTask(_ task: @escaping TaskAction) -> AsyncTask {
 
         let newTask = AsyncTask()
         newTask.errorDidAdded = {[weak self] action in
@@ -234,7 +234,7 @@ extension AsyncTask {
     }
 
     /// 创建MutiTask
-    fileprivate func createMutiTask(_ tasks:[TaskAction]) -> AsyncTask {
+    func createMutiTask(_ tasks:[TaskAction]) -> AsyncTask {
 
         let newTask = AsyncTasks()
         newTask.errorDidAdded = {[weak self] action in
@@ -251,7 +251,7 @@ extension AsyncTask {
     }
 
     /// 传递Error处理
-    fileprivate func transmitError(_ action:@escaping ResultAction) {
+    func transmitError(_ action:@escaping ResultAction) {
 
         if let errorDidAdded = errorDidAdded {
             errorDidAdded(action)
@@ -260,7 +260,7 @@ extension AsyncTask {
 
     /// 开始任务
     /// - Parameter action: 任务 block
-    fileprivate static func startTask(_ action:@escaping Action) {
+    static func startTask(_ action:@escaping Action) {
         self.queue.async(execute: action)
     }
 }

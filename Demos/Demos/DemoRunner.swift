@@ -10,6 +10,6 @@ import AsyncTask
 
 class DemoRunner {
     static func start() {
-        AsyncTask.Demo.start();
+        AsyncTask.demo.start();
     }
 }

@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73E2A3425BFC66B008A8CAB /* AsyncTask+extersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73E2A3325BFC66B008A8CAB /* AsyncTask+extersion.swift */; };
 		B75B430125A34953008B7FBA /* AsyncTaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B42FD25A34953008B7FBA /* AsyncTaskProtocol.swift */; };
 		B75B430225A34953008B7FBA /* AsyncTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B42FE25A34953008B7FBA /* AsyncTasks.swift */; };
-		B75B430325A34953008B7FBA /* AsyncTaskDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B42FF25A34953008B7FBA /* AsyncTaskDemo.swift */; };
 		B75B430425A34953008B7FBA /* AsyncTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75B430025A34953008B7FBA /* AsyncTask.swift */; };
 		B77BEF642574937C00E5F666 /* AsyncTask.h in Headers */ = {isa = PBXBuildFile; fileRef = B77BEF622574937C00E5F666 /* AsyncTask.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B77BEF8225749E0500E5F666 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77BEF8125749E0500E5F666 /* Demo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B73E2A3325BFC66B008A8CAB /* AsyncTask+extersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AsyncTask+extersion.swift"; sourceTree = "<group>"; };
 		B75B42FD25A34953008B7FBA /* AsyncTaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTaskProtocol.swift; sourceTree = "<group>"; };
 		B75B42FE25A34953008B7FBA /* AsyncTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTasks.swift; sourceTree = "<group>"; };
-		B75B42FF25A34953008B7FBA /* AsyncTaskDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTaskDemo.swift; sourceTree = "<group>"; };
 		B75B430025A34953008B7FBA /* AsyncTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncTask.swift; sourceTree = "<group>"; };
 		B77BEF5F2574937C00E5F666 /* AsyncTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsyncTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B77BEF622574937C00E5F666 /* AsyncTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncTask.h; sourceTree = "<group>"; };
@@ -37,6 +37,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B73E2C8D25C14F27008A8CAB /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				B75B42FD25A34953008B7FBA /* AsyncTaskProtocol.swift */,
+				B73E2A3325BFC66B008A8CAB /* AsyncTask+extersion.swift */,
+				B75B430025A34953008B7FBA /* AsyncTask.swift */,
+				B75B42FE25A34953008B7FBA /* AsyncTasks.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
 		B77BEF552574937C00E5F666 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +67,9 @@
 		B77BEF612574937C00E5F666 /* AsyncTask */ = {
 			isa = PBXGroup;
 			children = (
-				B77BEF622574937C00E5F666 /* AsyncTask.h */,
+				B73E2C8D25C14F27008A8CAB /* Code */,
 				B77BEF8125749E0500E5F666 /* Demo.swift */,
-				B75B430025A34953008B7FBA /* AsyncTask.swift */,
-				B75B42FF25A34953008B7FBA /* AsyncTaskDemo.swift */,
-				B75B42FD25A34953008B7FBA /* AsyncTaskProtocol.swift */,
-				B75B42FE25A34953008B7FBA /* AsyncTasks.swift */,
+				B77BEF622574937C00E5F666 /* AsyncTask.h */,
 				B77BEF632574937C00E5F666 /* Info.plist */,
 			);
 			path = AsyncTask;
@@ -146,11 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B75B430325A34953008B7FBA /* AsyncTaskDemo.swift in Sources */,
 				B75B430425A34953008B7FBA /* AsyncTask.swift in Sources */,
 				B75B430125A34953008B7FBA /* AsyncTaskProtocol.swift in Sources */,
 				B77BEF8225749E0500E5F666 /* Demo.swift in Sources */,
 				B75B430225A34953008B7FBA /* AsyncTasks.swift in Sources */,
+				B73E2A3425BFC66B008A8CAB /* AsyncTask+extersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +298,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AsyncTask/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,6 +324,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AsyncTask/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

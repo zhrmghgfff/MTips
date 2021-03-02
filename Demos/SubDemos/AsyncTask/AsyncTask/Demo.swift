@@ -9,13 +9,19 @@ import Foundation
 
 public class Demo {
     
-    public static func start() {
+    public func start() {
         log()
-        
-        
     }
     
-    static func log() {
-        print("\(Demo().self) Start ------")
+    func log() {
+        print("\(self) Start ------")
+    }
+}
+
+extension AsyncTask {
+    public static var demo: Demo {
+        get {
+            Demo()
+        }
     }
 }

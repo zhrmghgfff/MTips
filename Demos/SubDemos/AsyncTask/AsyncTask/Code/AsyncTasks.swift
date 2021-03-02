@@ -40,7 +40,7 @@ public class AsyncTasks : AsyncTask {
     }
 
     // MARK: 私有函数
-    fileprivate func addTasks(_ tasks:[TaskAction]) {
+    func addTasks(_ tasks:[TaskAction]) {
         guard let mutiTask = self.task as? MutiTask else {
             return
         }
@@ -50,7 +50,7 @@ public class AsyncTasks : AsyncTask {
         }
     }
 
-    override fileprivate func addTask(_ task: @escaping TaskAction) {
+    override func addTask(_ task: @escaping TaskAction) {
         guard let mutiTask = self.task as? MutiTask else {
             return
         }
